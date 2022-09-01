@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulário para avaliar a mentoria">
+    <meta name="keywords" content="form, mentorship">
+    <meta name="author" content="Daniel Mäder Gisi">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Avalie sua Mentoria!</title>
+</head>
+
+<body>
+    <header>
+        <h1>Avalie Sua Mentoria</h1>
+        <p>Chegou a hora de avaliar o seu mentor. Bora lá?</p>
+        <img src="img1.svg" alt="Estrelas para avaliar o mentor: de 1 a 5">
+    </header>
+    <form action="/" method="dialog" enctype="application/x-www-form-urlencoded">
+        <h3 role="legend">Informações Pessoais</h3>
+        <fieldset>
+            <div class="fields-wrapper">
+                <div class="name-wrapper">
+                    <div class="input-wrapper first-last-names">
+                        <label for="fname">Nome</label>
+                        <input id="fname" type="text">
+                    </div>
+                    <div class="input-wrapper first-last-names">
+                        <label for="lname">Sobrenome</label>
+                        <input id="lname" type="text">
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <label for="mail">Email <span class="muffled">(digite um email válido)</span></label>
+                    <input id="mail" type="email">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="fields-wrapper">
+                <legend>Informações do Mentor</legend>
+                <hr>
+                <div class="input-wrapper">
+                    <label for="mentor-select">Selecione quem foi o seu mentor</label>
+                    <select name="mentor-names" id="mentor-select">
+                        <option value="1">Ana</option>
+                        <option value="2">Biro³</option>
+                        <option value="3">Iago</option>
+                        <option value="4">Ju</option>
+                        <option value="5">Lara</option>
+                        <option value="6">Tamires</option>
+                        <option value="7">Uila</option>
+                    </select>
+                </div>
+                <div class="input-wrapper">
+                    <label for="feedback-text">Feedback sobre o mentor</label>
+                    <textarea name="feedback-text" id="feedback-text" cols="30" rows="10"></textarea>
+                </div>
+                <div class="input-wrapper checkbox-wrapper">
+                    <input type="checkbox" name="no-doubts" id="doubts-check">
+                    <label class="checkbox-label" for="doubts-check"><span>Todas as minhas dúvidas foram esclarecidas
+                            durante a
+                            mentoria.</span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="fields-wrapper">
+                <legend>Agendando Próxima Mentoria</legend>
+                <hr>
+                <div class="date-time-row">
+                    <div class="input-wrapper date-wrapper">
+                        <label for="next-date">Data <span class="muffled">(DD/MM/AAAA)</span></label>
+                        <input id="next-date" type="date">
+                    </div>
+                    <div class="input-wrapper time-wrapper">
+                        <label for="from-time">Das</label>
+                        <input id="from-time" type="time">
+                    </div>
+                    <div class="input-wrapper time-wrapper">
+                        <label for="to-time">Até</label>
+                        <input id="to-time" type="time">
+                    </div>
+                </div>
+            </div>
+            <button class="save-btn" type="submit">Salvar</button>
+        </fieldset>
+    </form>
+
+    <script>
+        function toggleStar(e) {
+            // parseInt(e.target.id) **Get the star number from its id to toggle opacity and background color.
+        }
+
+
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById(`star-${i}`).addEventListener("click", toggleStar(ev));
+        }
+
+
+    </script>
+</body>
+
+</html>
